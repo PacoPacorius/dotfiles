@@ -13,6 +13,7 @@ cp ~/.config/tmux/$TMUX ~/.dotfiles/.tmux.conf
 cp ~/.bin/update-configs ~/.dotfiles
 
 cd ~/.dotfiles/
+git pull origin main
 git add $VIM $MUTT $TMUX $BOMBADILLO update-configs
 git commit -m "update dotfiles"
 git push origin
