@@ -112,25 +112,25 @@ let g:livepreview_engine = 'xelatex'
 " * PLUGINS WITHOUT PLUG *
 " ************************
 
-" ==============
-" YouCompleteMe for autocompletion
-packadd! YouCompleteMe
-
-" Load YCM (only)
-let &rtp .= ',' . expand( '<sfile>:p:h' )
-filetype plugin indent on
-syn on
-
-" fallback for semantic completion
-let g:ycm_global_ycm_extra_conf = '~/.vim/pack/YouCompleteMe/opt/YouCompleteMe/.ycm_extra_conf.py'
-
-" triggers for c-style semantic completion are 3-word characters or the char '_'
-let g:ycm_semantic_triggers =  {
-  \   'c,cpp,objc': [ 're!\w{3}', '_' ],
-  \   'html': [ 're!<', '/' ],
-  \   'css' : [ 're!\w{3}', ':' ],
-  \
-  \ }
-
-" autohides the autocomplete preview window when exiting from insert mode
-let g:ycm_autoclose_preview_window_after_insertion=1
+"" ==============
+"" YouCompleteMe for autocompletion
+"packadd! YouCompleteMe
+"
+"" Load YCM (only)
+"let &rtp .= ',' . expand( '<sfile>:p:h' )
+"filetype plugin indent on
+"syn on
+"
+"" fallback for semantic completion
+"let g:ycm_global_ycm_extra_conf = '~/.vim/pack/YouCompleteMe/opt/YouCompleteMe/.ycm_extra_conf.py'
+"
+"" triggers for c-style semantic completion are 3-word characters or the char '_'
+"let g:ycm_semantic_triggers =  {
+"  \   'c,cpp,objc': [ 're!\w{3}', '_' ],
+"  \   'html': [ 're!<', '/' ],
+"  \   'css' : [ 're!\w{3}', ':' ],
+"  \
+"  \ }
+"
+"" autohides the autocomplete preview window when exiting from insert mode
+"let g:ycm_autoclose_preview_window_after_insertion=1
