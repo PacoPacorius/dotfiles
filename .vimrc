@@ -94,6 +94,7 @@ if !isdirectory(expand('/home/pacopacorius/.vim/undo//')) | call mkdir(expand('/
 if !isdirectory(expand('/home/pacopacorius/.vim/backup//')) | call mkdir(expand('/home/pacopacorius/.vim/backup//'), "p") | endif
 if !isdirectory(expand('/home/pacopacorius/.vim/swap//')) | call mkdir(expand('/home/pacopacorius/.vim/swap//'), "p") | endif
 
+" test test
 
 "" *6*6*6*6*6*6*6*6*6*6*
 "" * PLUGINS FROM PLUG *
