@@ -1,0 +1,1 @@
+/home/pacopacorius/.vimrc
