@@ -10,7 +10,7 @@ cp ~/$VIM ~/.dotfiles/
 cp ~/$MUTT ~/.dotfiles/
 cp ~/.config/$BOMBADILLO ~/.dotfiles/
 cp ~/.config/tmux/$TMUX ~/.dotfiles/.tmux.conf
-cp ~/bin/update-configs ~/.dotfiles
+cp ~/.bin/update-configs ~/.dotfiles
 
 cd ~/.dotfiles/
 git add $VIM $MUTT $TMUX $BOMBADILLO update-configs
