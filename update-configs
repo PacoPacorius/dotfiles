@@ -3,7 +3,7 @@
 VIM=.vimrc
 BOMBADILLO=.bombadillo.ini
 MUTT=.muttrc
-TMUX=.tmux.conf
+TMUX=tmux.conf
 
 cd ~/.dotfiles/
 git add $VIM $MUTT $TMUX $BOMBADILLO update-configs
