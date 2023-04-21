@@ -126,14 +126,14 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " enable preview window
-" let g:asyncomplete_auto_completeopt = 0
-" set completeopt=menuone,noinsert,noselect,preview
+ let g:asyncomplete_auto_completeopt = 0
+ set completeopt=menuone,noinsert,noselect,preview
 
 
 " autoclose preview window when done
-" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Force refresh autocompletion
-" imap <C-space> <Plug>(asyncomplete_force_refresh)
+ imap <C-space> <Plug>(asyncomplete_force_refresh)
 " For Vim 8 (<c-@> corresponds to <c-space>):
 " imap <c-@> <Plug>(asyncomplete_force_refresh)
