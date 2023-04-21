@@ -1,0 +1,19 @@
+set folder = "imaps://PacoPacorius@disroot.org@disroot.org:993"
+set smtp_url = "smtps://PacoPacorius@disroot.org@disroot.org:465"
+
+set from = "PacoPacorius@disroot.org"
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+
+
+
+
+
+
+
+
+

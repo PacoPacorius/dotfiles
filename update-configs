@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+VIM=.vimrc
+BOMBADILLO=.bombadillo.ini
+MUTT=.muttrc
+TMUX=.tmux.conf
+
+rm -f ~/.dotfiles/.* 
+cp ~/$VIM ~/.dotfiles/
+cp ~/$MUTT ~/.dotfiles/
+cp ~/.config/$BOMBADILLO ~/.dotfiles/
+cp ~/.config/tmux/$TMUX ~/.dotfiles/.tmux.conf
+cp ~/.bin/update-configs ~/.dotfiles
+
+cd ~/.dotfiles/
+git add $VIM $MUTT $TMUX $BOMBADILLO update-configs
+git commit -m "update dotfiles"
+git pull origin main
+git push origin
