@@ -1,8 +1,6 @@
-
-" An example for a vimrc file.
 "
 " Maintainer:	PacoPacorius
-" Last change:	25/11/2022
+" Last change:	21-04-2023
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -90,47 +88,52 @@ set backup
 set backupdir=/home/pacopacorius/.vim/backup//
 set undofile 
 set undodir=/home/pacopacorius/.vim/undo//
-if !isdirectory(expand('/home/pacopacorius/.vim/undo//')) | call mkdir(expand('/home/pacopacorius/.vim/undo//'), "p") | endif
-if !isdirectory(expand('/home/pacopacorius/.vim/backup//')) | call mkdir(expand('/home/pacopacorius/.vim/backup//'), "p") | endif
-if !isdirectory(expand('/home/pacopacorius/.vim/swap//')) | call mkdir(expand('/home/pacopacorius/.vim/swap//'), "p") | endif
+if !isdirectory(expand('$HOME/.vim/undo//')) | call mkdir(expand('$HOME/.vim/undo//'), "p") | endif
+if !isdirectory(expand('$HOME/.vim/backup//')) | call mkdir(expand('$HOME/.vim/backup//'), "p") | endif
+if !isdirectory(expand('$HOME/.vim/swap//')) | call mkdir(expand('$HOME/.vim/swap//'), "p") | endif
 
 
-"" *6*6*6*6*6*6*6*6*6*6*
-"" * PLUGINS FROM PLUG *
-"" *6*6*6*6*6*6*6*6*6*6*
-"
-"call plug#begin()
-"Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
-"call plug#end()
-"
-"" Set default pdf viewer to zathura
-"let g:livepreview_previewer = 'zathura'
-"" Set Live Latex Preview engine to xelatex
-"let g:livepreview_engine = 'xelatex'
-"
-"" ************************
-"" * PLUGINS WITHOUT PLUG *
-"" ************************
-"
-"" ==============
-"" YouCompleteMe for autocompletion
-"packadd! YouCompleteMe
-"
-"" Load YCM (only)
-"let &rtp .= ',' . expand( '<sfile>:p:h' )
-"filetype plugin indent on
-"syn on
-"
-"" fallback for semantic completion
-"let g:ycm_global_ycm_extra_conf = '~/.vim/pack/YouCompleteMe/opt/YouCompleteMe/.ycm_extra_conf.py'
-"
-"" triggers for c-style semantic completion are 3-word characters or the char '_'
-"let g:ycm_semantic_triggers =  {
-"  \   'c,cpp,objc': [ 're!\w{3}', '_' ],
-"  \   'html': [ 're!<', '/' ],
-"  \   'css' : [ 're!\w{3}', ':' ],
-"  \
-"  \ }
-"
-"" autohides the autocomplete preview window when exiting from insert mode
-"let g:ycm_autoclose_preview_window_after_insertion=1
+" *6*6*6*6*6*6*6*6*6*6*
+" * PLUGINS FROM PLUG *
+" *6*6*6*6*6*6*6*6*6*6*
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+call plug#end()
+
+" *** LIVE-LATEX-PREVIEW ***
+
+" Set default pdf viewer to zathura
+let g:livepreview_previewer = 'zathura'
+" Set Live Latex Preview engine to xelatex
+let g:livepreview_engine = 'xelatex'
+
+" *** ASYNCOMPLETE ***
+
+" Tab completion 
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" enable preview window
+" let g:asyncomplete_auto_completeopt = 0
+" set completeopt=menuone,noinsert,noselect,preview
+
+
+" autoclose preview window when done
+" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Force refresh autocompletion
+" imap <C-space> <Plug>(asyncomplete_force_refresh)
+" For Vim 8 (<c-@> corresponds to <c-space>):
+" imap <c-@> <Plug>(asyncomplete_force_refresh)
