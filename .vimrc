@@ -105,10 +105,7 @@ endif
 
 call plug#begin()
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " *** LIVE-LATEX-PREVIEW ***
@@ -118,22 +115,3 @@ let g:livepreview_previewer = 'zathura'
 " Set Live Latex Preview engine to xelatex
 let g:livepreview_engine = 'xelatex'
 
-" *** ASYNCOMPLETE ***
-
-" Tab completion 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-
-" enable preview window
- let g:asyncomplete_auto_completeopt = 0
- set completeopt=menuone,noinsert,noselect,preview
-
-
-" autoclose preview window when done
- autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Force refresh autocompletion
- imap <C-space> <Plug>(asyncomplete_force_refresh)
-" For Vim 8 (<c-@> corresponds to <c-space>):
-" imap <c-@> <Plug>(asyncomplete_force_refresh)
