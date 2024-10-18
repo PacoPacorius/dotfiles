@@ -1,0 +1,33 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt beep extendedglob
+unsetopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/pacopacorius/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+autoload -Uz promptinit
+promptinit
+
+prompt fade purple
+
+zstyle ':completion:*' menu select
+PROMPT_COMMAND='echo -e "\033[?6c"'
+precmd() { eval "$PROMPT_COMMAND" }
+
+export PATH=$PATH:~/.bin:~/.local/share/gem/ruby/3.0.0/bin/
+
+
+alias ls="ls --color"
+alias ll="ls -althF --color"
+alias l="ls -tF --color"
+alias trans="transmission-remote"
+alias java="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
+alias one-screen="xrandr --output HDMI-1 --same-as eDP-1"

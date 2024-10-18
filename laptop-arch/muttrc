@@ -7,7 +7,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent"
 set trash = "+Trash"
 set postponed = "+Drafts"
-
+set editor=kak
 
 
 

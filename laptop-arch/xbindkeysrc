@@ -1,0 +1,143 @@
+# For the benefit of emacs users: -*- shell-script -*-
+#################################
+###  xbindkeys configuration  ###
+#################################
+#
+# Version: 1.8.7
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines below if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+#"xbindkeys_show" 
+#  release+Mod4 + s
+
+# set directly keycode (here control + f with my keyboard)
+#"xterm"
+#  c:41 + m:0x4
+#
+## specify a mouse button
+#"xterm"
+#  control + b:2 ### Audio control ###
+
+#######################
+###  Sound related  ###
+#######################
+
+# Increase Volume
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+  XF86AudioRaiseVolume
+
+# Decrease Volume
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+  XF86AudioLowerVolume
+
+# Mute
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  XF86AudioMute
+
+# Switch Sink to hdmi 
+"pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo"
+  Mod4 + F4
+
+# Switch Sink to analog stereo
+"pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo"
+  Mod4 + Shift_L + F4
+
+##################
+###  Backlight  ##
+##################
+
+# Backlight up 
+"brightnessctl set 4%+"
+  XF86MonBrightnessUp
+
+# Backlight down
+"brightnessctl set 4%-"
+  XF86MonBrightnessDown
+
+##################################
+###  Screenshots, Screencasts  ###
+##################################
+
+"scrot --file ~/photos/screen%y%m%d.png"
+   Print
+
+"scrot -s --file ~/photos/screen%y%m%d.png"
+  Shift+Print
+
+"gifinator3000.sh 360x240 out.gif"
+  Mod1+Print
+
+#################################
+###  Useful Program Launcher  ###
+#################################
+
+"urxvt"
+  Mod4 + Return
+
+"urxvt"
+  Mod4 + 1
+
+"firefox"
+  Mod4 + 2
+
+"nemo"
+  Mod4 + 3
+
+"mpv --player-operation-mode=pseudo-gui"
+  Mod4 + 4
+
+"gimp"
+  Mod4 + 5
+
+"feh /home/pacopacorius/photos/"
+  Mod4 + 6
+
+"anki"
+  Mod4 + 7
+
+"xdotool getwindowfocus windowkill"
+  Mod4 + q
+
+
+###############################
+###  overscan compensation  ###
+###############################
+
+"xrandr --output HDMI1 --transform 1.6,0,-65,0,1.6,-48,0,0,1"
+  XF86Display
+
+########################################
+###  End of xbindkeys configuration  ###
+########################################

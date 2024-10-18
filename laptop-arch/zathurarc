@@ -1,0 +1,9 @@
+map <C-r> recolor
+
+unmap -
+unmap =
+unmap +
+map - zoom out
+map = zoom in
+
+set database sqlite

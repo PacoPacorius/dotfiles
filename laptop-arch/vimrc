@@ -66,6 +66,7 @@ set autoindent
 set number
 set nowrap
 set clipboard=unnamedplus
+set clipboard+=unnamed
 set mouse=a
 
 " *8*8*8*8*8*8*8*8*8*8*8
@@ -92,11 +93,14 @@ if !isdirectory(expand('$HOME/.vim/undo//')) | call mkdir(expand('$HOME/.vim/und
 if !isdirectory(expand('$HOME/.vim/backup//')) | call mkdir(expand('$HOME/.vim/backup//'), "p") | endif
 if !isdirectory(expand('$HOME/.vim/swap//')) | call mkdir(expand('$HOME/.vim/swap//'), "p") | endif
 
+" set vim cursor to a blinking block in the linux console
+let &t_ve= "\e[?25h\e[?6;143;255c"
 
 " *6*6*6*6*6*6*6*6*6*6*
 " * PLUGINS FROM PLUG *
 " *6*6*6*6*6*6*6*6*6*6*
 
+" auto-install plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

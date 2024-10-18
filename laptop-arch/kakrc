@@ -1,0 +1,60 @@
+### general configuration ###
+
+# quit from insert mode with jj
+hook global InsertKey j %{ try %{
+    exec -draft hH <a-k>jj<ret> d
+    exec <esc>
+}}
+
+set global tabstop 4                                                        
+set global indentwidth 4
+
+
+# keymap to work with greek keyboard
+hook global InsertKey ξ %{ try %{
+    exec -draft hH <a-k>ξξ<ret> d
+    exec <esc>
+}}
+
+# basic movement
+map global normal ξ j
+map global normal κ k
+map global normal η h
+map global normal λ l
+map global normal ε e
+map global normal ς w
+map global normal β b
+
+# goto mode movement
+map global normal γ g
+map global normal Γ G
+map global goto ξ j
+map global goto κ k
+map global goto η h
+map global goto λ l
+
+# changing to insert mode
+map global normal ι i
+map global normal Ι I
+map global normal ψ c
+map global normal ρ r
+map global normal α a
+map global normal Α A
+map global normal ο o
+map global normal Ο O
+
+# selection
+map global normal χ x
+
+map global normal Ξ J
+map global normal Κ K
+map global normal Η H
+map global normal Λ L
+map global normal Ε E
+map global normal Β B
+
+map global normal σ s
+
+# deletion
+map global normal δ d
+map global normal <a-δ> <a-d>

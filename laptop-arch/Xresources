@@ -1,0 +1,24 @@
+URxvt.color0: [00]#000000
+URxvt.foreground: #ffffff
+URxvt.background: [00]#000000
+URxvt.transparent: true
+URxvt.fading: 30
+URxvt.depth: 32
+URxvt.shading: 20	 ! this does control opacity, higher is more transparent
+URxvt.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
+URxvt.borderColor: #ffffff
+URxvt.visualBell: false
+URxvt.cursorBlink: true
+
+
+xedit.enableBackups: off
+xedit.*.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
+xedit.*.foreground: #990099
+xedit.*.background: #000066
+xedit.*.cursorColor: #ffffff
+
+
+editres.*.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
+editres.*.foreground: #cccccc
+editres.*.background: #333333
+editres.*.cursorColor: #ffffff
