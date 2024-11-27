@@ -9,7 +9,7 @@ can see your GitHub email by typing `git config user.email`.
 Run `eval "$(ssh-agent)"` and then `ssh-add path-to-private-key`. Then add
 the public key to GitHub. This should make pushing and pulling from remote
 repositories work. If it doesn't, make sure ssh-agent is running and re-run
-`eval "$(ssh-agent)"`. If the command return a pid, this is good and it 
+`eval "$(ssh-agent)"`. If the command returns a pid, this is good and it 
 should work.
 
 If it still doesn't work, make sure to have the private key under one of 
