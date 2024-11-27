@@ -1,6 +1,6 @@
 "
 " Maintainer:	PacoPacorius
-" Last change:	21-04-2023
+" Last change:	09-11-2024
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -72,7 +72,7 @@ set mouse=a
 " * MAPS AND SHORTCUTS *
 " *8*8*8*8*8*8*8*8*8*8*8
 inoremap jj <esc>
-vnoremap ii <esc>
+vnoremap i <esc>i
 
 nnoremap <M-/> I//<esc>
 nnoremap <M-?> :s@//@  <CR>:nohls<CR>hhxx
