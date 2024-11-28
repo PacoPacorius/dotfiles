@@ -4,8 +4,11 @@ URxvt.background: [00]#000000
 URxvt.transparent: true
 URxvt.fading: 30
 URxvt.depth: 32
-URxvt.shading: 20	 ! this does control opacity, higher is more transparent
-URxvt.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
+URxvt.shading: 30	 ! this does control opacity, higher is more transparent
+!URxvt.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
+URxvt.font: xft:Classic Console Neue:size=12
+URxvt.boldFont: xft:Classic Console Neue:size=12:style=bold
+URxvt.italicFont: xft:Classic Console Neue:size=12:style=italic
 URxvt.borderColor: #ffffff
 URxvt.visualBell: false
 URxvt.cursorBlink: true
