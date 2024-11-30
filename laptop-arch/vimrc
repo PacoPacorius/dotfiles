@@ -68,6 +68,7 @@ set nowrap
 set clipboard=unnamedplus
 set clipboard+=unnamed
 set mouse=a
+set gdefault    " g flag is the default in substitute command
 
 " *8*8*8*8*8*8*8*8*8*8*8
 " * MAPS AND SHORTCUTS *
