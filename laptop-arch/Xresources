@@ -1,6 +1,6 @@
 ! global resources
-*.background: #692620
-*.foreground: #ffb77d
+*.background: #354a5d
+*.foreground: #f2ffff
 *.font: -adobe-helvetica-medium-r-normal--14-140-*-*-*-*-iso8859-1
 
 ! URxvt specific
@@ -17,6 +17,7 @@ URxvt.letterSpace: -4
 URxvt.borderColor: #ffffff
 URxvt.visualBell: false
 URxvt.cursorBlink: true
+URxvt.scrollstyle: next
 
 
 ! xedit specific resources
@@ -24,6 +25,7 @@ xedit.enableBackups: off
 
 
 
+xscreensaver*.*.foreground: #a2613e
 
 
 ! URxvt next fonts !!!
