@@ -17,14 +17,6 @@ endif
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
@@ -32,14 +24,12 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Put these in an autocmd group, so that we can delete them easily.
+" Automatically set wraparound after 80 characters in text files
 augroup vimrcEx
   au!
+  autocmd filetype text setlocal textwidth=78
+augroup END
 
-" freepascal shit, associate .pp files with pascal syntax, highlight math
-" operators in pascal, set vim variables for freepascal
-au BufRead,BufNewFile *.pp set filetype=pascal
-let pascal_symbol_operator=1
-let pascal_fpc=1
 
 " use 256 colors in terminal
 if !has("gui_running")
@@ -50,9 +40,6 @@ endif
 " this is needed for tmux to display correct colors
 set bg=dark
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-augroup END
 
 
 " quality of life improvements
@@ -67,6 +54,9 @@ set number
 set nowrap
 set clipboard=unnamedplus
 set mouse=a
+set ttimeout
+set ttimeoutlen=50
+set sidescrolloff=10
 
 " *8*8*8*8*8*8*8*8*8*8*8
 " * MAPS AND SHORTCUTS *
@@ -79,6 +69,7 @@ nnoremap <M-?> :s@//@  <CR>:nohls<CR>hhxx
 
 " kakoune-like introduce line without moving
 nnoremap <esc>o mao<esc>`a
+nnoremap <esc>O mbO<esc>`b
 nnoremap <esc>i mbO<esc>`b
 
 " F2 to enable greek in vim

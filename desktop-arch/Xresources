@@ -1,4 +1,8 @@
-URxvt.color0: #000000
+! global vars
+
+*.background: #8098b0
+*.foreground: #000000
+
 URxvt.foreground: #ffffff
 URxvt.background: #000000
 URxvt.transparent: false
@@ -7,11 +11,11 @@ URxvt.depth: 32
 URxvt.shading: 00	 ! this does control opacity, higher is more transparent
 !URxvt.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
 URxvt.font: -adobe-courier-medium-r-*-*-17-*-*-*-*-*-iso8859-1
-URxvt.boldFont: -adobe-courier-bold-r-*-*-17-*-*-*-*-*-iso8859-1
+!URxvt.boldFont: -adobe-courier-bold-r-*-*-17-*-*-*-*-*-iso8859-1
 URxvt.letterSpace: -1
 URxvt.borderColor: #ffffff
 URxvt.visualBell: false
 URxvt.cursorBlink: true
 
 xfontsel.*.font: -misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1
-xfontsel.*.background: #8098b0
+!xfontsel.*.background: #8098b0
